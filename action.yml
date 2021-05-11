@@ -1,0 +1,10 @@
+name: 'Galata Dergisi - Service Worker Cache Name Checker'
+description: 'Checks if the service worker cache name needs an update'
+inputs:
+  REPO_PATH:
+    description: 'Path to the repository root'
+    required: true
+    default: './'
+runs:
+  using: 'node14'
+  main: 'dist/index.js'

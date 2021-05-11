@@ -1,0 +1,26 @@
+{
+  "name": "@galata-dergisi/service-worker-checker",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.mjs",
+    "build": "ncc build index.mjs --license licenses.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galata-dergisi/service-worker-checker.git"
+  },
+  "keywords": [],
+  "author": "Mehmet Baker <mehmet@mehmetbaker.dev>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/galata-dergisi/service-worker-checker/issues"
+  },
+  "homepage": "https://github.com/galata-dergisi/service-worker-checker#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@vercel/ncc": "^0.28.5",
+    "ansi-styles": "^6.1.0",
+    "diff": "^5.0.0"
+  }
+}

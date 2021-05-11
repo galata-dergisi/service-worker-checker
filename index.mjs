@@ -94,10 +94,14 @@ async function main() {
 
     for (const file of files) {
       const url = `https://galatadergisi.org/${file.replace(/^public\//, '')}`;
-      const localFile = await fs.promises.readFile(path.join(repoPath, file), 'utf-8');
+      const localFile = (await fs.promises.readFile(path.join(repoPath, file), 'utf-8'))
+        .replace(/\r*/g, '')
+        .replace(/\\r\\n/g, '\\n');
 
       core.info(`${styles.color.blueBright.open}Downloading ${url}${styles.color.close}`);
-      const remoteFile = await getURL(url);
+      const remoteFile = (await getURL(url))
+        .replace(/\r*/g, '')
+        .replace(/\\r\\n/g, '\\n');
 
       if (localFile !== remoteFile) {
         const diff = Diff.diffChars(localFile, remoteFile);

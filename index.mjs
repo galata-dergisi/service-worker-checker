@@ -50,8 +50,8 @@ function parseCacheName(serviceWorkerCode) {
 
 async function compareServiceWorkerCacheNames(repoPath) {
   try {
-    const file = 'client/service-worker.js';
-    const url = `https://galatadergisi.org/${file.replace(/^client\//, '')}`;
+    const file = 'public/service-worker.js';
+    const url = `https://galatadergisi.org/${file.replace(/^public\//, '')}`;
     const localFile = await fs.promises.readFile(path.join(repoPath, file), 'utf-8');
     const remoteFile = await getURL(url);
 
